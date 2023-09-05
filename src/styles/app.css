@@ -1,0 +1,230 @@
+/* styles/app.css */
+
+@import url("https://use.typekit.net/mpa1wkh.css");
+@import "dropkiq-ui/dist/dropkiq";
+@import url("https://unpkg.com/dropkiq-ui@1.0.22/dist/dropkiq.css");
+
+html,
+body {
+  font-family: "Poppins", "acumin-pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  color: rgb(75, 75, 75);
+  background: #e0e0e0;
+}
+
+.component-selected {
+  outline: 2px dotted #2680eb;
+  position: relative;
+}
+
+.component-selected::after {
+  content: " ";
+
+  /* Assuming 'border-primary' is blue. Adjust if different. */
+  /* border: 2px dashed blue;  */
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.transition {
+  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@charset "UTF-8";
+
+.tippy-tooltip[data-animation="fade"][data-state="hidden"] {
+  opacity: 0;
+}
+
+.tippy-iOS {
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tippy-popper {
+  pointer-events: none;
+  max-width: calc(100vw - 10px);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: transform;
+}
+
+.tippy-tooltip {
+  position: relative;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #333;
+  transition-property: visibility, opacity, transform;
+  outline: 0;
+}
+
+.tippy-tooltip[data-placement^="top"] > .tippy-arrow {
+  border-width: 8px 8px 0;
+  border-top-color: #333;
+  margin: 0 3px;
+  transform-origin: 50% 0;
+  bottom: -7px;
+}
+
+.tippy-tooltip[data-placement^="bottom"] > .tippy-arrow {
+  border-width: 0 8px 8px;
+  border-bottom-color: #333;
+  margin: 0 3px;
+  transform-origin: 50% 7px;
+  top: -7px;
+}
+
+.tippy-tooltip[data-placement^="left"] > .tippy-arrow {
+  border-width: 8px 0 8px 8px;
+  border-left-color: #333;
+  margin: 3px 0;
+  transform-origin: 0 50%;
+  right: -7px;
+}
+
+.tippy-tooltip[data-placement^="right"] > .tippy-arrow {
+  border-width: 8px 8px 8px 0;
+  border-right-color: #333;
+  margin: 3px 0;
+  transform-origin: 7px 50%;
+  left: -7px;
+}
+
+.tippy-tooltip[data-interactive][data-state="visible"] {
+  pointer-events: auto;
+}
+
+.tippy-tooltip[data-inertia][data-state="visible"] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  padding: 5px 9px;
+}
+
+#dropkiq-autosuggest-menu {
+  display: none;
+  width: 300px;
+  position: absolute;
+  background: white;
+  border: 1px solid #cbcccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  z-index: 8888;
+  font-size: 16px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    “Segoe UI”, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”,
+    “Helvetica Neue”, sans-serif;
+}
+
+#dropkiq-autosuggest-menu .dropkiq-header {
+  padding: 5px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: rgba(44, 46, 47, 0.05);
+}
+
+#dropkiq-autosuggest-menu .right-arrow {
+  margin-right: 5px;
+  display: inline-block;
+  position: relative;
+  width: 13px;
+  height: 8px;
+  top: 1px;
+}
+
+#dropkiq-autosuggest-menu .icon {
+  margin-right: 5px;
+}
+
+#dropkiq-autosuggest-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #718096;
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+#dropkiq-autosuggest-menu ul li {
+  padding: 5px;
+  position: relative;
+}
+
+#dropkiq-autosuggest-menu ul li .hint-icon {
+  z-index: 100;
+  position: absolute;
+  float: right;
+  right: 10px;
+  top: 3px;
+  display: inline-block;
+}
+
+#dropkiq-autosuggest-menu ul li .hint-icon img {
+  width: 12px;
+  height: 13px;
+}
+
+#dropkiq-autosuggest-menu ul li .first-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+}
+
+#dropkiq-autosuggest-menu ul li .extra {
+  margin-left: 41px;
+  padding: 3px;
+  margin-top: 3px;
+  display: none;
+  font-size: 12px;
+}
+
+#dropkiq-autosuggest-menu ul li .extra p {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 10px;
+}
+
+#dropkiq-autosuggest-menu ul li .extra samp {
+  font-weight: bolder;
+}
+
+#dropkiq-autosuggest-menu ul li:hover {
+  cursor: pointer;
+}
+
+#dropkiq-autosuggest-menu ul li.active {
+  background: #ebf8ff;
+}
+
+#dropkiq-autosuggest-menu ul li.active .extra {
+  display: block;
+}
+
+/* Customize Layer CSS Start */
+.layer-name > h2 {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: unset !important;
+  font-family: "Poppins";
+}
+.inner > div {
+  display: flex;
+  flex-direction: row;
+}
+/* Customize Layer CSS End */
